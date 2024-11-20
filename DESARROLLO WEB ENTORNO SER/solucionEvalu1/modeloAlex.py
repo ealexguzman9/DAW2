@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base
 
 # engine = create_engine('postgresql://usuario:contraseña@localhost/nombre_de_la_bd')
 #engine = create_engine('postgresql://user1:password1@localhost/eval1')
-engine = create_engine('postgresql://user1:password1@localhost/eval1?port=5433')
+engine = create_engine('postgresql://user1:password1@localhost/eval1?port=5432')
 
 # Crear una sesión para interactuar con la base de datos
 Session = sessionmaker(bind=engine)
@@ -40,4 +40,4 @@ class Alumnos(Base):
         session.commit()
 
 # Crear la tabla en la base de datos (esto solo se hace una vez)
-#Base.metadata.create_all(engine)
+#.metadata.create_all(engine)

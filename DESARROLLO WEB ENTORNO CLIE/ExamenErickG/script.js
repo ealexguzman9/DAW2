@@ -75,16 +75,18 @@ for(let i = 0; i < personas.length; i++){
 console.log(personas);
 
 //Intercambia los telefonos de las personas en posiciones 2 y 4
-let tel1 = personas[1].telefono;
-console.log(tel1)
-console.log(personas[1].telefono)
+let tel1 = personas[2].telefono;
+personas[2].telefono = personas[4].telefono;
+personas[4].telefono = tel1;
+console.log(personas);
 
 //¿Cual es el nombre y apellido de la persona mas joven?
 let nombPersEdadMin = "";
 let apellPersEdadMin = "";
-let edadMin = 0;
+let edadMin = personas[0].edad;
 for(let i = 0; i < personas.length; i++){
-    if(edadMin = Math.min(personas[i].edad)){
+    if(edadMin > personas[i].edad){
+        edadMin = personas[i].edad
         nombPersEdadMin = personas[i].nombre
         apellPersEdadMin = personas[i].apellido
     }

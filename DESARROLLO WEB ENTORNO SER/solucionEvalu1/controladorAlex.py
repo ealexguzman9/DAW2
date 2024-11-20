@@ -5,10 +5,10 @@ import modeloAlex
 
 datosJson = modeloAlex.JsonRead("data/alumnos.json")
 # datosJson es una lista de diccionarios
-# print(datosJson)
+print(datosJson)
 nuevaListaDic = []
 for dic in datosJson:
-    if 'Pedro' in dic.values():
+    if 'Pedro' in dic.values() or 'Juan' in dic.values():
         nuevaListaDic.append(dic)
 
 sesion = modeloAlex.abrir_sesion()
@@ -41,7 +41,7 @@ def app(environ, start_response):
         modeloAlex.cerrar_sesion(sesion)
         return vistasAlex.handle_logout(start_response)
     elif path == '/alumnos':
-        consulta = {"nota" : 6}
+        consulta = {"nota" : 5}
         alumnosNota = modeloAlex.Alumnos.read(sesion, **consulta)
         return vistasAlex.handle_alumnos(environ, start_response, alumnosNota)
     
