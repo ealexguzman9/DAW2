@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Gasolineras - Inicio</title>
+            <link rel = "icon" href= "/img/logo.png"></link> 
+            <link href="style.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        </head>
+        <body>
+            <!-- Barra de Navegación -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#"><img src="/img/logo.png" alt="Logo" style="width: 15%;"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav"></div>
+                </div>
+            </nav>
+            <!-- Mapa -->
+            <div class="container-fluid" id="info">
+                <h1>Gasolineras de Donosti</h1>
+                <div id='map'></div>
+                    <script>
+                        const map = L.map('map').setView([43.321, -1.985], 13);
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+
+                        //Asignacion de variable icono
+                        const LeafIcon = L.Icon.extend({
+                            options: {
+                                iconSize:     [55, 50],
+                                popupAnchor:  [0, 0]
+                            }
+                        });
+
+                        const gasolinera1 = new LeafIcon({iconUrl: '/img/gas_station2.png'});
+                        const gasolinera2 = new LeafIcon({iconUrl: '/img/gas_station2.png'});
+                        const electricGaso = new LeafIcon({iconUrl: '/img/electric_station.png'});
+                        
+                        //Markers de las gasolineras
+                        const marcador1 = L.marker([43.3096437,-1.9809246,16.75], {icon: gasolinera1}).bindPopup('<strong>Estación de Servicio Repsol</strong></br><strong>Dirección:</strong> Errondo Pasealekua, 7, 20009 DE, Gipuzkoa</br><strong>Teléfono:</strong> 943456996</br><strong>Sitio web:</strong> <a href="https://www.repsol.es/es/productos-y-servicios/estaciones-de-servicio/">Repsol</a></br><img src=\"https://lh5.googleusercontent.com/p/AF1QipMHNCCdJJRiRtbMOJJK2lJXGAcaRe1bAvNzMrxc=w426-h240-k-no\" width=300px>').addTo(map);
+                        const marcador2 = L.marker([43.2873491,-2.0299207,15.75], {icon: gasolinera2}).bindPopup('<strong>Estación de Servicio ARITZETA</strong></br><strong>Dirección:</strong> AP-8, Km. 27.1, 20170 Usurbil, Gipuzkoa</br><strong>Teléfono:</strong> 943362260</br><strong>Sitio web:</strong> <a href="http://www.cepsa.com/cepsa/Que_ofrecemos/Estaciones_de_Servicio/Red_de_estaciones_de_servicio/#resultados">Cepsa</a></br><img src=\"https://lh5.googleusercontent.com/p/AF1QipNovReT8MI581evkkOopv1LAme-wWZUEXbQ0EAE=w408-h306-k-no\" width=300px>').addTo(map);
+                        const marcador3 = L.marker([43.2853249,-1.9840785,16.25], {icon: electricGaso}).bindPopup('<strong>Punto de carga Repsol</strong></br><strong>Dirección:</strong> P.K.1200, PG MIRAMON, GI3401 DCHA, SN, 20014 Donostia-San Sebastian</br><strong>Teléfono:</strong> 943654501</br><strong>Sitio web:</strong> <a href="https://www.repsol.es/particulares/vehiculos/movilidad-electrica/">Repsol</a></br><img src=\"https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=6Su0_GDEz-hTlVS7V99hUQ&cb_client=search.gws-prod.gps&w=408&h=240&yaw=44.392937&pitch=0&thumbfov=100\" width=300px>').addTo(map);
+                        	
+                        //Localizacion nuestra
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function(position) {
+                                const userLat = position.coords.latitude;
+                                const userLon = position.coords.longitude;
+
+                                // Agregar marcador de la posición del usuario
+                                const usuario = new LeafIcon({iconUrl: '/img/us.png'});
+                                const icono = L.marker([userLat, userLon], {icon: usuario}).addTo(map)
+                                .bindPopup("¡Estás aquí!")
+                                .openPopup();
+                                }, function() {
+                                alert("No se pudo obtener la ubicación.");
+                            });
+                        } else {
+                            alert("La geolocalización no es soportada por este navegador.");
+                        }
+                    </script>        
+            </div>
+        <!-- Footer -->
+        <footer class="text-center mt-4 p-4">
+            <div>
+                <h3>Atribuciones de Íconos</h3>
+                Gas Station by kakhim from <a href="https://thenounproject.com/browse/icons/term/gas-station/" target="_blank" title="Gas Station Icons">Noun Project</a> (CC BY 3.0)
+                Gas Station by Buildhouse10 from <a href="https://thenounproject.com/browse/icons/term/gas-station/" target="_blank" title="Gas Station Icons">Noun Project</a> (CC BY 3.0)
+                Gas Station by Gabriella from <a href="https://thenounproject.com/browse/icons/term/gas-station/" target="_blank" title="Gas Station Icons">Noun Project</a> (CC BY 3.0)
+                person by Alice Design from <a href="https://thenounproject.com/browse/icons/term/person/" target="_blank" title="person Icons">Noun Project</a> (CC BY 3.0)
+            </div>
+                <p>&copy; 2024.</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

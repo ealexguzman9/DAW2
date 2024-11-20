@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="reloj"></h1>
+
+    <script>
+        /*Actualizar reloj*/
+        function actualizarReloj(){
+
+            const actual = new Date();
+
+        let hora = actual.getHours();
+        let minuto = actual.getMinutes();
+        let segundos = actual.getSeconds();
+
+        if(hora<10)
+            hora = '0'+hora;
+        if(minuto<10)
+            minuto = '0'+minuto;
+        if(segundos<10)
+            segundos = '0'+segundos;
+            document.getElementById("reloj").innerHTML = hora +":"+ minuto + ":" + segundos;
+        }
+        setInterval(actualizarReloj,1000)
+    </script>
+</body>
+</html>

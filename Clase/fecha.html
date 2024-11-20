@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular edad</h1>
+    <label>Fecha de nacimiento: </label><input id="fechaNacimiento">
+    <button onclick="calcularEdad()">Calcular</button>
+    <br><label>Edad: </label><p id="resultado"></p>
+    
+    <script>
+        function calcularEdad(){
+            const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+            const fechActual = new Date();
+            let edad = fechActual.getFullYear()-fechaNacimiento.getFullYear();
+
+            if (fechaNacimiento>fechActual){
+                alert("Error, la edad introducida es mayor a la fecha actual")
+            }else if(
+                (fechActual.getMonth() < fechaNacimiento.getMonth())
+                || 
+                (
+                (fechActual.getMonth() == fechaNacimiento.getMonth()) 
+                && 
+                (fechActual.getDate() < fechaNacimiento.getDate())
+                )
+            ){
+                document.getElementById("resultado").innerHTML = "Tu edad es: " + (edad--) + " años.";
+            }else{
+                document.getElementById("resultado").innerHTML = "Tu edad es: " + edad + " años.";
+            }
+
+        }
+    </script>
+</body>
+</html>

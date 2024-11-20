@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "icon" href= "/Imagenes/icono.png"></link> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Clim24/7 </title>
+    <meta name=" description" content= "Página que te muestra la temperatura actual." >
+    <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+    <!-- Contenedor principal (Flex Container) -->
+    <div class="container">
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="logo_header">
+                <img src="/Imagenes/logo_sinFondo.png" alt="Logo Clim24/7" width="150px" height="150px">
+                Clim24/7
+            </div>
+        </div>
+            <!-- Área de contenido principal a la derecha -->
+            <main class="main-content">
+                    <div class="informacion">
+                        <div class="mensaje">
+                            <h1>Bienvenido a "Clim 24/7</h1>
+                        </div>
+
+                        <div class="gif_clima">
+                            <img src="/Imagenes/fever.gif" alt="Gif temperatura" width="300px" height="300px">
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h2>Datos Meteorológicos en Donostia</h2>
+                        <div id="tempAct"></div>
+                        <div id="tempMax"></div>
+                        <div id="tempMin"></div>
+                        <div id="sensTermica"></div>
+                        <div id="DiaONoche"></div>
+                        <div id="imagen_icon"></div>
+                    </div>
+                    
+                    <div class="informacion2">
+                        <h2>Datos de las próximas horas en Donostia</h2>
+                        <div id="proximasH">
+                            <div class="proxhoras">
+                                <p id="hora1"></p>
+                                <p id="temp1">Temperatura: --ºC</p> 
+                                <p id="preci1">Precipitación: --%</p> 
+                                <div id="imagenTemp0"></div>
+                            </div>
+                            <div class="proxhoras">
+                                <p id="hora2"></p>
+                                <p id="temp2">Temperatura: --ºC</p> 
+                                <p id="preci2">Precipitación: --%</p> 
+                                <div id="imagenTemp1"></div>
+                            </div>
+                            <div class="proxhoras">
+                                <p id="hora3"></p>
+                                <p id="temp3">Temperatura: --ºC</p>
+                                <p id="preci3">Precipitación: --%</p>
+                                <div id="imagenTemp2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Clim 24/7</span> by <span property="cc:attributionName">Desconocido</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+        </footer>
+        <script src="script.js"></script>
+    </div>
+
+</body>
+</html>
