@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>¿Par o Impar?</h1>
+    <p id="poi"></p>
+
+    <script>
+        /* Crea una función que dado un número diga si es par o no.*/
+        function parOimpar(x){
+            if (x%2==0)
+            return true;
+            else
+            return false;
+        }
+        let numero = prompt("Escribe el numero a comprobar");
+        if( parOimpar(numero)==true)
+			document.getElementById("poi").innerHTML = numero + " Es Par";
+		else
+        document.getElementById("poi").innerHTML = numero + " Es Impar"; 
+    </Script>
+
+</body>
+</html>

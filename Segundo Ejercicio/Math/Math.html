@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Calculando el coseno de los grados</h1>
+    <p id="num"></p>
+    <p id="cos"></p>
+
+    <script>
+        let numero = prompt("Ingresa el grado a calcular");
+        function gaR(numero) {
+        return numero * (Math.PI / 180);
+    }
+        let radianes = gaR(numero);
+        document.getElementById("num").innerHTML = "Los radianes de " + numero+"º" + " son: " + radianes + ".";"<br>"
+        document.getElementById("cos").innerHTML = "El coseno de " + numero+"º" + " es: " + Math.cos(radianes) + ".";
+
+    </script>
+</body>
+</html>

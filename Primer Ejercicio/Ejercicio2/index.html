@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <h1>Numeros pares</h1>
+    <p id="Numb"></p>
+    
+    <script>
+        let numero = prompt("Introduce un número");
+		let mensaje = "";
+		for(let i=2; i<=numero;i++)
+			if(i%2==0)
+			mensaje = mensaje + i + "<br>"
+			document.getElementById("Numb").innerHTML = mensaje ;
+    </script>
+    
+</body>
+</html>
+	

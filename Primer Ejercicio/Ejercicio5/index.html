@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Datos sobre los años</h1>
+    <p id="resultado1"></p>
+    <p id="resultado"></p>
+    
+    
+    <script>
+        // Obtener la edad del usuario
+        let edad = prompt("Introduce tu edad:");
+
+        // Calcular el año de nacimiento
+        let anioActual = new Date().getFullYear();
+        let anioNac = anioActual - edad;
+
+        // Verificar si es mayor o menor de edad
+        let esMayorDeEdad;
+        if (edad >= 18) {
+        esMayorDeEdad = "Eres mayor de edad.";
+        } else {
+        esMayorDeEdad = "Eres menor de edad.";
+        }
+       
+        // Calcular los años bisiestos desde el año de nacimiento
+        let bisiestos = "";
+        for (let i = anioNac; i <= anioActual; i++) {
+            if (i % 4 === 0) {
+                bisiestos += i + ", ";
+            }
+        }
+        // Mostrar los resultados en el DOM
+        document.getElementById("resultado1").innerHTML = esMayorDeEdad;
+        document.getElementById("resultado").innerHTML = "Los años bisiestos desde tu nacimiento (" + anioNac + ") hasta ahora (" + anioActual + ") son: " + bisiestos;
+    </script>
+</body>
+</html>

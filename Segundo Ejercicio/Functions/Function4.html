@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Crea una función que pida dos números como parámetro: valor inferior y valor superior.
+        La función devuelve un número aleatorio entre los dos números.*/
+        function numeroAleatorioEntre(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        let valorInferior = 5;
+        let valorSuperior = 15;
+        let numeroAleatorio = numeroAleatorioEntre(valorInferior, valorSuperior);
+        console.log(numeroAleatorio);
+    </Script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando el IVA</h1>
+    <p id="iva"></p>
+
+    <script>
+
+        //Crea una función que devuelva el precio con IVA. Se le pasa un parámetro que indica el precio sin IVA.
+        let precio = prompt("Ingresa el precio del producto");
+        function calcularIva(precio){
+            let prec = precio * 1.21;
+            return prec;
+        }
+        let resultado = calcularIva(precio)
+        document.getElementById("iva").innerHTML = "El precio total con IVA incluido es de: $" + resultado;
+    </Script>
+
+</body>
+</html>

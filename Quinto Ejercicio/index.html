@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pagina de coches - Inicio</title>
+            <link rel = "icon" href= "/"></link> 
+            <link href="style.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        </head>
+        <body>
+            <!-- Barra de Navegación -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#"><img src="C" alt="Logo" style="width: 50%;"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav"></div>
+                </div>
+            </nav>
+            <!-- Mapa -->
+            <div class="container-fluid" id="info">
+                <h1>Bienvenido a Cuchao</h1>
+                <div id='map'></div>
+                    <script>
+                        const map = L.map('map').setView([51.5, -0.09], 13);
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+
+                        const LeafIcon = L.Icon.extend({
+                            options: {
+                                shadowUrl: 'leaf-shadow.png',
+                                iconSize:     [38, 95],
+                                shadowSize:   [50, 64],
+                                iconAnchor:   [22, 94],
+                                shadowAnchor: [4, 62],
+                                popupAnchor:  [-3, -76]
+                            }
+                        });
+
+                        const greenIcon = new LeafIcon({iconUrl: '/img/logo.png/'});
+                        const redIcon = new LeafIcon({iconUrl: 'leaf-red.png'});
+                        const orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+
+                        const mGreen = L.marker([51.5, -0.09], {icon: greenIcon}).bindPopup('I am a green leaf.').addTo(map);
+                        const mRed = L.marker([51.495, -0.083], {icon: redIcon}).bindPopup('I am a red leaf.').addTo(map);
+                        const mOrange = L.marker([51.49, -0.1], {icon: orangeIcon}).bindPopup('I am an orange leaf.').addTo(map);
+
+                    </script>        
+            </div>
+        <!-- Footer -->
+        <footer class="text-center mt-4 p-4">
+                <p>📍 Dirección: Aldakonea K., 36, 20012 Donostia, Gipuzkoa</p>
+                <p>📞 Teléfono: +123 456 7890</p>
+            <div>
+                <a href="#" class="me-3 text-white">Facebook</a>
+                <a href="#" class="me-3 text-white">Twitter</a>
+                <a href="#" class="me-3 text-white">Instagram</a>
+            </div>
+                <p>&copy; 2024 Cuchao. Todos los derechos reservados.</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

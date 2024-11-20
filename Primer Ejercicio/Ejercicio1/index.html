@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+
+    <h1 id="titulo">Tabla de multiplicar: </h1>
+    <div id="resultado"></div>
+    
+    <script>
+        let numero = prompt("Introduce un número del 1 al 10?");
+        document.getElementById("resultado").innerHTML = "Número: " + numero;
+
+        //Cambiar titulo
+        document.getElementById("titulo").innerHTML = "Tabla de multiplicar del: " + numero;
+        
+        //Tablas de multiplicar con bucle
+        let mensaje = "";
+        for(let i = 1; i<=10; i++)
+            mensaje = mensaje + numero + " * " + i + " = " + (numero*i) + "<br>";
+
+        document.getElementById("resultado").innerHTML = mensaje;
+    </script>
+</body>
+</html>

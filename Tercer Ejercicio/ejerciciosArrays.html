@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Arrays</title>
+</head>
+<body>
+    <script>
+        //Array
+        let cars = ["Saab", "Volvo", "BMW"];
+
+        //Inserta dos elementos al final en un array.
+        cars.push("Toyota","Nissan");
+            console.log(cars);
+        //Inserta dos elementos al comienzo en un array.
+        cars.unshift("Ferrari","Subaru");
+            console.log(cars);
+        //Elimina dos elementos al final de un array.
+        cars.splice(-2);
+            console.log(cars);
+        //Elimina dos elementos al comienzo de un array.
+        cars.splice(0,2);
+            console.log(cars);
+
+    
+        /*Dado un array de 10 elementos, crea otros dos arrays: 
+        uno con los primeros 5 elementos y el otro con los 5 últimos.*/
+        const numeros = [12,54,87,23,45,16,27,246,99,3];
+        const mitad1 = numeros.splice(0,(numeros.length/2));
+            console.log("Mitad 1 = ",mitad1);
+        const mitad2 = numeros.splice(0,numeros.length);
+            console.log("Mitad 2 = ",mitad2);
+
+        /*Suma de elementos de un array: Escribe una función que sume 
+        todos los elementos de un array de números.*/
+        const numr = [12,54,87,23,45,16,27,246,99,3];
+        let total=0;
+            numr.forEach(function(a){total += a;});
+                console.log("El total es: "+ total);
+
+        //Promedio de notas: Calcula el promedio de calificaciones en un array de números y redondea el resultado a dos decimales.
+        const notas = [7,6,3.33,7,9,6,5,6];
+        let suma=0;
+            notas.forEach(function(a){suma += a;});
+        let promedio = (suma/notas.length).toFixed(1);
+            console.log("El promedio total es: " + promedio);
+
+        //Encontrar el número mayor: Escribe una función para encontrar el número más grande en un array de números.
+        const mayor = [12,54,87,23,45,16,27,246,999,3];
+            console.log("El numero mayor es: " + Math.max(...mayor));
+
+        //Encontrar el número menor: Encuentra el número más pequeño en un array de números.
+        const menor = [12,54,87,23,45,16,27,246,999,3];
+            console.log("El numero menor es: " + Math.min(...menor));
+        
+            //
+        //Eliminar duplicados: Crea una función que elimine los elementos duplicados de un array.
+        const dupli = [1,2,6,3,1,2,54,5,9,33,33,5];
+        let resu = dupli.filter((item,index)=>{
+            return dupli.indexOf(item) == index;
+        })
+                console.log("Sin duplicados: " + resu);
+            //
+        //Contar elementos: Cuenta cuántas veces aparece un elemento específico en un array.
+        function contarElementos(array, elemento) {
+        return array.filter(item => item === elemento).length;
+        }
+        console.log(contarElementos([1, 2, 2, 3, 4, 2], 2));
+
+        //Dar la vuelta a un array: Escribe una función que invierta un array dado, de modo que el último elemento se convierta en el primero, y así sucesivamente.
+        function darLaVuelta(vuelta) {
+        return vuelta.reverse();
+        }
+        console.log("Invertido: "+ darLaVuelta([1, 2, 3, 4]));
+
+        //Dado un texto que contiene un párrafo de varias frases: Crea un array llamado frases donde cada posición del array contiene una frase del párrafo.
+    
+        //Ordenar números: Ordena un array de números en orden ascendente y luego en orden descendente.
+        let Ordenar = [3, 1, 4, 1, 5, 9];
+        let ascendente = [...Ordenar].sort((a, b) => a - b);
+        let descendente = [...Ordenar].sort((a, b) => b - a);
+            console.log("Ascendente: " + ascendente, "Descendente: " + descendente);
+
+        //Crear un array adicional con los  números pares del array.
+        let tabla = [1, 2, 3, 4, 5, 6];
+        let numerosPares = tabla.filter(num => num % 2 === 0);
+            console.log("Con numeros pares: "+numerosPares);
+
+        //Unión de arrays: Combina dos arrays en uno solo sin duplicados.
+        let half1 = [1, 2, 3];
+        let half2 = [3, 4, 5];
+        let union = [...new Set([...half1, ...half2])];
+        console.log("Unidos: "+union); 
+
+        //Eliminar elementos específicos: Elimina un elemento específico de un array y devuelve el nuevo array.
+        const array = [1, 2, 3, 4, 2];
+        let elemento = 2;
+        let nuevoArray = array.filter(item => item !== elemento);
+            console.log("Eliminando elemento: "+nuevoArray);
+
+        //Multiplicar elementos: Multiplica todos los elementos de un array por un valor específico.
+        function multiplicarElementos(array, valor) {
+        return array.map(item => item * valor);
+        }
+        console.log("MultiplicandoElementos: "+ multiplicarElementos([1, 2, 3], 2));
+
+        //Encontrar el índice: Encuentra el índice de un elemento en un array.
+        function encontrarIndice(array, elemento) {
+        return array.indexOf(elemento);
+        }
+        console.log("Indice: "+ encontrarIndice([1, 2, 3, 4], 3));
+
+        //Dividir array en grupos: Divide un array en grupos de un tamaño específico.
+        
+
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

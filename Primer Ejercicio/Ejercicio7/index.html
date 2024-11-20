@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     let jugarOtraVez = true;
+
+    while (jugarOtraVez) {
+    let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+    let num = -1;
+    let intentos = 0;
+
+    while (num != numeroAleatorio) {
+        num = prompt("Introduce un número entre 1 y 100:");
+        console.log(numeroAleatorio)
+        if (num > numeroAleatorio) {
+            alert("El número es menor que el introducido.");
+        } else if (num < numeroAleatorio) {
+            alert("El número es mayor que el introducido.");
+        }
+        
+        intentos++;
+        console.log("Cantidad de intentos: " + intentos + ".");
+    }
+
+    alert("¡Has acertado, muchas felicidades!");
+    alert("Tu numero de intentos ha sido: " + intentos);
+    let respuesta = prompt("¿Te gustaría volver a jugar? Escribe '1' para aceptar, o '2' para denegar.");
+
+    if (respuesta == '2') {
+        jugarOtraVez = false;
+    }
+}
+    </script>
+</body>
+</html>

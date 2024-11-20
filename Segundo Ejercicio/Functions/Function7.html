@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        //Crea una función que dado un string nos diga si es palíndromo o no (capicúa).
+        function esPalindromo(cadena) {
+    // Convertir la cadena a minúsculas y eliminar caracteres no alfanuméricos
+    let cadenaLimpia = cadena.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    // Invertir la cadena limpia
+    let cadenaInvertida = cadenaLimpia.split('').reverse().join('');
+    
+    // Comparar la cadena limpia con su versión invertida
+    return cadenaLimpia === cadenaInvertida;
+}
+    let cadena = "A man, a plan, a canal, Panama";
+    console.log(esPalindromo(cadena));
+    </script>
+</body>
+</html>

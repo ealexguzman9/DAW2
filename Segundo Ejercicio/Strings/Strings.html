@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    //Convierte una cadena a mayúsculas.
+    let cadena = "hola mundo";
+    let mayusculas = cadena.toUpperCase();
+    console.log(mayusculas);
+
+    //Elimina los espacios en blanco exteriores de una cadena (por delante de la primera letra, y por detrás de la última).
+    let cadena1 = "   estamos testeando el programa   ";
+    let sinEspacios = cadena1.trim();
+    console.log(sinEspacios);
+
+    //¿Cómo obtendríamos el quinto carácter de una cadena de texto?
+    let cadena2 = "hola mundhghgftdrsdry";
+    let quinto = cadena2.charAt(5);
+    console.log(quinto);
+
+    //Pon en mayúscula la primera letra de una cadena de textos.
+    let cadena3 = "estamos comiendo";
+    let primeraMayuscula = cadena3.charAt(0).toUpperCase() + cadena3.slice(1);
+    console.log(primeraMayuscula);
+    
+    //Obtén la primera palabra de una cadena de textos.
+    let cadena4 = "iremos a tomar un café";
+    let primeraPalabra = cadena4.split(" ")[0];
+    console.log(primeraPalabra);
+
+    //Cuenta las vocales que tiene una cadena de textos.
+    function contarVocales(cadena5) {
+        let vocales = "aeiouáéíóúAEIOUÁÉÍÓÚ";
+        let contador = 0;
+            for (let letra of cadena5) {
+                if (vocales.includes(letra)) {
+                contador++;
+                }
+            }
+            return contador;
+    }
+    let cadena5 = "¿y si mejor nos vamos de este sitio a uno mejor?";
+    let numeroVocales = contarVocales(cadena5);
+    console.log(numeroVocales);
+
+</script>
+</body>
+</html>

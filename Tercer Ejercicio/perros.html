@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const perros = [
+    {
+        nombre: "Toby",
+        raza: "Pitbull",
+        edad: 3,
+        leGusta: ["Hueso", "Pollo", "Chololate"]
+    },
+    {
+        nombre: "Pichi",
+        raza: "Doberman",
+        edad: 8,
+        leGusta: ["Hueso", "Carne", "Fruta", "Pienso"]
+    },
+    {
+        nombre: "Tiger",
+        raza: "Chihuaua",
+        edad: 11,
+        leGusta: ["Sopa de fideos", "Zanahoria", "Fresa", "Coco"]
+    }
+];
+//Todo (perros)
+console.log(perros);
+
+//La información del segundo perro
+console.log(perros[1]);
+
+//El nombre del tercer perro
+console.log("Nombre del tercer perro: " + perros[2].nombre);
+
+//La raza del primer perro
+console.log("Raza del primer perro: " + perros[0].raza);
+
+//La segunda cosa que le gusta al primer perro
+console.log("La segunda cosa que le gusta al primer perro es: " + perros[0].leGusta[1]);
+
+//La última cosa que le gusta al último perro
+console.log((perros[2]).leGusta[-1]);
+
+//La cantidad de cosas que le gusta al segundo perro, y lo que le gusta (número y lista de cosas que le gustan)
+console.log(("Cantidad de cosas que le gustan: " + perros[1].leGusta.length) + " y son: " + perros[1].leGusta + ".")
+
+//El nombre del perro con más edad
+let edad1 = 0;
+let nombPerro = "";
+for(let i = 0; i < perros.length; i++){
+    if(perros[i].edad > edad1){
+        edad1 = perros[i].edad;
+        nombPerro = perros[i].nombre;
+    }
+}
+console.log("El nombre del perro con la mayor edad es: " + nombPerro + " con la edad de: " + edad1);
+
+//La lista de cosas que le gustan tanto al primer como al segundo perro
+console.log(("Primer perro: " + perros[0].leGusta) + "\n" + ("Segundo perro: " + perros[1].leGusta));
+    </script>
+</body>
+</html>

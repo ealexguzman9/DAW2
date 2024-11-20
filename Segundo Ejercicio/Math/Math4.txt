@@ -1,0 +1,9 @@
+¿Cuál es la diferencia entre Math.round, Math.floor, Math.ceil y Math.toFixed?
+
+1) El método Math.ceil() redondea un número hacia ARRIBA al entero más cercano.
+2) El método Math.floor() redondea un número hacia ABAJO al entero más cercano.
+3) El método Math.round() redondea un número al entero más cercano.
+2,49 se redondeará hacia abajo (2) y 2,5 se redondeará hacia arriba (3).
+4) El método toFixed() redondea la cadena a un número específico de decimales y tambien
+convierte un número en una cadena.
+

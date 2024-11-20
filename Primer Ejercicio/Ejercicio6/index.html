@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resultado de los Dados</h1>
+    <img id="dado1" src="dado.png" height="150px" width="150px">
+    <img id="dado2" src="dado.jpg" height="150px" width="150px">
+    <p id="resultado"></p>
+    <p id="resultado1"></p>
+ <script>
+    function lanzarDados() {
+    let dado1 = Math.floor(Math.random() * 6) + 1;
+    let dado2 = Math.floor(Math.random() * 6) + 1;
+
+    console.log("Dado 1: " + dado1);
+    console.log("Dado 2: " + dado2);
+    
+    //Esta parte la he copiado de internet ya que inicialmente solo me mostraba una sola imagen.
+    //y con el logre actualizar la imagen mediante se iban cambiando los valores de los dados.
+    document.getElementById("dado1").src = "dado" + dado1 + ".png";
+    document.getElementById("dado2").src = "dado" + dado2 + ".jpg";
+    //------------------------------------------------------------------------------
+    let resultado = "";
+    if (dado1 === dado2) {
+        resultado = "Los dados son iguales.";
+    } else if (dado1 > dado2) {
+        resultado = "El primer dado es mayor.";
+    } else {
+        resultado = "El segundo dado es mayor.";
+    }
+    document.getElementById("resultado1").innerHTML = "Dado 1= " + dado1 + ", Dado 2= " + dado2 + ". ";
+    document.getElementById("resultado").innerHTML = resultado;
+}
+
+// Llamar a la función para lanzar los dados
+lanzarDados();
+ </script>
+</body>
+</html>
