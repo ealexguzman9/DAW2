@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "icon" href= "/Imagenes/icono.png"></link> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Clima</title>
+    <meta name=" description" content= "Página que te muestra la temperatura actual." >
+    <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+    <!-- Contenedor principal (Flex Container) -->
+    <div class="container">
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="logo_header">Mi Página Flexbox</div>
+            <div class="barra_busqueda"> aqui ira la barra de busqueda</div>
+
+        </div>
+
+        <!-- Contenedor principal de dos columnas -->
+        <div class="main-layout">
+            <!-- Menú lateral izquierdo -->
+            <div class="sidebar">
+                <a href="#">Inicio</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Servicios</a>
+                <a href="#">Contacto</a>
+            </div>
+
+            <!-- Área de contenido principal a la derecha -->
+            <main class="main-content">
+                    <div class="weather">
+                        <h1>Datos Meteorológicos en San Sebastián</h1>
+                        <div id="tempAct"></div>
+                        <div id="tempMax"></div>
+                        <div id="tempMin"></div>
+                        <div id="sensTermica"></div>
+                        <div id="DiaONoche"></div>
+                        <div id="imagen_icon"></div>
+                    </div>
+                    
+            </main>
+        </div>
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>&copy; 2024 Mi Página pruebas. Todos los derechos reservados.</p>
+        </footer>
+        <script src="script.js"></script>
+    </div>
+
+</body>
+</html>

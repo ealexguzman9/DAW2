@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/* Ejemplo de uso de unidades */
+.px-box {
+  width: 200px;
+  background-color: #d5f5e3;
+}
+
+.em-box {
+  width: 20em;
+  background-color: #f9e79f;
+}
+
+.rem-box {
+  width: 15rem;
+  background-color: #aed6f1;
+}
+
+.percent-box {
+  width: 50%;
+  background-color: #f5cba7;
+}
+
+.vh-box {
+  height: 50vh;
+  background-color: #a9dfbf;
+}
+
+.vw-box {
+  width: 50vw;
+  background-color: #f7cac9;
+}
+
+.vmin-box {
+  width: 20vmin;
+  height: 20vmin;
+  background-color: #f8c471;
+}
+
+.vmax-box {
+  width: 20vmax;
+  height: 20vmax;
+  background-color: #d7bde2;
+}
+
+.cm-box {
+  width: 5cm;
+  background-color: #aed6f1;
+}
+
+.mm-box {
+  width: 50mm;
+  background-color: #f4d03f;
+}
+
+/* Ejemplo de métodos de strings */
+.title {
+  content: "Hello World, SASS!";
+}
+
+/* Ejemplo de colores */
+.button {
+  background-color: rgba(52, 152, 219, 0.5);
+  padding: 10px;
+  width: 150px;
+  color: white;
+}
+
+/* Ejemplo de manipulación de listas */
+.list-item {
+  width: 40px;
+  background-color: green;
+}
+
+/* Ejemplo de manipulación de mapas */
+.button1 {
+  background-color: #3498db;
+  padding: 10px;
+  width: 150px;
+  color: white;
+}
+
+/* Ejemplo de booleanos */
+.feature {
+  display: block;
+}
+
+/* Ejemplo de null */
+.optional {
+  content: "No value";
+}/*# sourceMappingURL=style.css.map */

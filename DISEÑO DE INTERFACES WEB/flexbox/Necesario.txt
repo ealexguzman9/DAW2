@@ -1,0 +1,4 @@
+Necesario
+Minimo: Mostrar la temperatura de la ubicación con la imagen correspondiente
+extra: 
+*Temperatura Maxima y Minima de cada dia

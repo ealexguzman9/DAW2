@@ -1,0 +1,101 @@
+/* Ejemplo de uso de unidades */
+    .px-box {
+    width: 200px;
+    background-color: #d5f5e3;
+    }
+    
+    .em-box {
+    width: 20em;
+    background-color: #f9e79f;
+    }
+    
+    .rem-box {
+    width: 15rem;
+    background-color: #aed6f1;
+    }
+    
+    .percent-box {
+    width: 50%;
+    background-color: #f5cba7;
+    }
+    
+    .vh-box {
+    height: 50vh;
+    background-color: #a9dfbf;
+    }
+    
+    .vw-box {
+    width: 50vw;
+    background-color: #f7cac9;
+    }
+    
+    .vmin-box {
+    width: 20vmin;
+    height: 20vmin;
+    background-color: #f8c471;
+    }
+    
+    .vmax-box {
+    width: 20vmax;
+    height: 20vmax;
+    background-color: #d7bde2;
+    }
+    
+    .cm-box {
+    width: 5cm;
+    background-color: #aed6f1;
+    }
+    
+    .mm-box {
+    width: 50mm;
+    background-color: #f4d03f;
+    }
+
+    /* Ejemplo de métodos de strings */
+    $text: "Hello, SASS!";
+    $new-text: str-insert($text, " World", 6); // Inserta " World" en la posición 6
+    .title {
+    content: $new-text; // Resultado: "Hello World, SASS!"
+    }
+
+    /* Ejemplo de colores */
+    $primary-color: rgba(52, 152, 219, 0.5);
+    .button {
+    background-color: $primary-color;
+    padding: 10px;
+    width: 150px;
+    color: white;
+    }
+
+    /* Ejemplo de manipulación de listas */
+    $colors: (red, green, blue);
+    $sizes: 30px 40px 50px;
+    .list-item {
+    width: nth($sizes, 2); // 40px
+    background-color: nth($colors, 2); // green
+    }
+
+    /* Ejemplo de manipulación de mapas */
+    $theme-colors: (
+    "primary": #3498db,
+    "secondary": #2ecc71,
+    "third": #4df3
+    );
+    .button1 {
+    background-color: map-get($theme-colors, "primary"); //#3498db
+    padding: 10px;
+    width: 150px;
+    color: white;
+    }
+
+    /* Ejemplo de booleanos */
+    $enabled: true;
+    .feature {
+    display: if($enabled, block, none); // Muestra el elemento si $enabled es true
+    }
+
+    /* Ejemplo de null */
+    $optional-value: null;
+    .optional {
+    content: if($optional-value != null, $optional-value, "No value");
+    }
