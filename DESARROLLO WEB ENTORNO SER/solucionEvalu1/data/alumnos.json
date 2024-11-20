@@ -1,0 +1,102 @@
+[
+    {
+        "nombre": "Pedro",
+        "apellido": "Unanue",
+        "nota": 6
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Azurmendi",
+        "nota": 3
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "Perurena",
+        "nota": 8
+    },
+    {
+        "nombre": "Maite",
+        "apellido": "Azurmendi",
+        "nota": 9
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Iraola",
+        "nota": 3
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "López",
+        "nota": 4
+    },
+    {
+        "nombre": "Maite",
+        "apellido": "Perurena",
+        "nota": 0
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Iraola",
+        "nota": 4
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "Azurmendi",
+        "nota": 6
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Unanue",
+        "nota": 10
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "López",
+        "nota": 2
+    },
+    {
+        "nombre": "Maite",
+        "apellido": "Iraola",
+        "nota": 9
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "López",
+        "nota": 2
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "Unanue",
+        "nota": 6
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "Azurmendi",
+        "nota": 4
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "Perurena",
+        "nota": 2
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Unanue",
+        "nota": 5
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "Iraola",
+        "nota": 0
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Azurmendi",
+        "nota": 2
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "López",
+        "nota": 0
+    }
+]
