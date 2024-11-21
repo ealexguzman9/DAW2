@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Coches</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid my-5 pt-5 justify-content-center">
+        <!-- Seccion de introducción -->
+        <div class="d-flex justify-content-center">
+            <div class="p-2">
+                <h1 id="Introducción">Introducción</h1>
+                <strong><p>Esto solo es un apartado de Introducción de prueba para el examen y que se vea que esta horizontalmente y centrado</p></strong>
+                <button type="button" class="btn btn-primary">Botón Prueba</button>
+            </div>
+        </div>
+        <!-- Sistema de Cards -->
+        <div class="container mt-4" id="Contenido">
+            <h2 class="text-center">Nuestros Productos</h2>
+            <div class="row">
+                <!-- Card de Producto 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img src="/Car page/Audi.png" class="card-img-top" alt="Audi">
+                        <div class="card-body">
+                            <h5 class="card-title">Audi</h5>
+                            <p class="card-text">El Audi A8 es un lujoso sedán con tecnología avanzada y un diseño elegante.</p>
+                            <p class="card-text"><strong>111,462 €</strong></p>
+                            <a href="#" class="btn btn-primary">Ver coche</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card de Producto 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img src="/Car page/Audi.png" class="card-img-top" alt="Audi">
+                        <div class="card-body">
+                            <h5 class="card-title">Audi</h5>
+                            <p class="card-text">El Audi A8 es un lujoso sedán con tecnología avanzada y un diseño elegante.</p>
+                            <p class="card-text"><strong>111,462 €</strong></p>
+                            <a href="#" class="btn btn-primary">Ver coche</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card de Producto 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img src="/Car page/Audi.png" class="card-img-top" alt="Audi">
+                        <div class="card-body">
+                            <h5 class="card-title">Audi</h5>
+                            <p class="card-text">El Audi A8 es un lujoso sedán con tecnología avanzada y un diseño elegante.</p>
+                            <p class="card-text"><strong>111,462 €</strong></p>
+                            <a href="#" class="btn btn-primary">Ver coche</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Sección de alertas -->
+        <div class="d-flex justify-content-center">
+            <div class="p-2">
+                <div class="alert alert-Primary alert-dismissible fade show" role="alert">
+                    <strong>Advertencia:</strong> Esta es una alerta con un botón de cierre. No hay por que preocuparse solo es una alerta informativa.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- Sección grupo de botones -->
+        <div class="d-flex justify-content-center">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary"><a href="#Introducción">Introducción</a></button>
+                <button type="button" class="btn btn-secondary"><a href="#Contenido">Contenido</a></button>
+                <button type="button" class="btn btn-secondary"><a href="#accordionExample">FAQ</a></button>
+            </div>
+        </div>
+        <!-- Paginación -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="+1">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Paginación -->
+        <div class="accordion" id="accordionExample"><strong><p>Preguntas frecuentes</p></strong>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Pregunta 1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Contenido para la pregunta 1
+                    </div>
+                </div>
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Pregunta 2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Contenido para la pregunta 2
+                    </div>
+                </div>
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Pregunta 3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Contenido para la pregunta 3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
