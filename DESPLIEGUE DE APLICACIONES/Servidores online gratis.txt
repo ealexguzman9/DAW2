@@ -1,0 +1,10 @@
+Servidores online gratis
+
+1. CloudFlare
+2. GitHub Pages
+3. AwardSpace - Gratuito
+4. Dinahosting - De pago
+5. AWS - EC2 => Ubuntu + Apache
+6. Netlify
+7. Vercel
+8. GitHub CodeSpaces
