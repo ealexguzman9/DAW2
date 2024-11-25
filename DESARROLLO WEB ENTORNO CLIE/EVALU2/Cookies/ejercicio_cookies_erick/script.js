@@ -8,15 +8,17 @@
 
 //Chequear Cookie
   function checkCookie() {
-    let username = getCookie("username");
-    if (username != "") {
-     alert("Welcome again " + username);
-    } else {
-      username = prompt("Please enter your name:", "");
-      if (username != "" && username != null) {
-        setCookie("username", username, 365);
-      }
+    let languageCookie  = getCookie("language");
+    if (!languageCookie) {
+      setCookie("language", "en", 365);
+    } else if (languageCookie === "en") {
+      window.location.href = "index.html";
+    } else if (languageCookie === "eu") {
+      window.location.href = "index_eu.html";
+    } else if (languageCookie === "es") {
+      window.location.href = "index_es.html";
     }
+    console.log(languageCookie);
   }
   //Obtener la cookie
   function getCookie(cname) {
