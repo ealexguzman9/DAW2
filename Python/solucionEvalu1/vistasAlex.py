@@ -22,6 +22,7 @@ def handle_logout(start_response):
     start_response('303 See Other', [('Location', '/')])
     return [b'']
 
+
 def handle_alumnos(environ, start_response, alumnos):
     # Lógica para la ruta '/es'
     response = template2.render(alumnos=alumnos).encode('utf-8') #renderizar 'index.html' con los productos recogidos de la BD

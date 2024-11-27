@@ -1,0 +1,3 @@
+He intentado crear un archivo JavaScript para cada página de índice, 
+pero no he logrado que funcione. Aunque todo parece funcionar correctamente, 
+tengo un pequeño problema de sobrecarga de páginas que no he conseguido solucionar.

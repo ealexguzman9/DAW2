@@ -11,6 +11,7 @@
     let languageCookie  = getCookie("language");
     if (!languageCookie) {
       setCookie("language", "en", 365);
+      return;
     } else if (languageCookie === "en") {
       window.location.href = "index.html";
     } else if (languageCookie === "eu") {
@@ -36,4 +37,6 @@
     }
     return "";
   }
-  checkCookie();
+  document.addEventListener("DOMContentLoaded", function() {
+    checkCookie();
+  });

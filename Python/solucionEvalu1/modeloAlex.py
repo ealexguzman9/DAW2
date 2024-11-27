@@ -11,6 +11,7 @@ engine = create_engine('postgresql://user1:password1@localhost/eval1?port=5432')
 Session = sessionmaker(bind=engine)
 
 def abrir_sesion():
+    
     return Session()
 
 def cerrar_sesion(session):
@@ -21,7 +22,6 @@ def JsonRead(jsonFile):
     with open(jsonFile, encoding="utf-8") as f:
         datos = json.load(f)
     return datos
-
 Base = declarative_base()
 # Clase que representa la tabla 'productos'
 class Alumnos(Base):
