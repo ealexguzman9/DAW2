@@ -3,28 +3,32 @@ const { createApp } = Vue;
 const App = {
   data() {
     return {
-      numero1: 0,
-      numero2: 0
+      minusculas:"abcdefghijklmnopqrstuvwxyz",
     };
   },
   template: `
     <input 
-    v-model="numero1"
-    type="number"
-    placeholder="Escribe un numero"
+    v-model="caja"
+    type="textbox"
+    placeholder=""
     />
-    <input 
-    v-model="numero2"
+
+    <button type="submit">Copiar</button><br>
+    
+    <input
+    v-model="longitud"
     type="number"
-    placeholder="Escribe un numero"
+    placeholder="1"
     />
-    <h2>Estos son los resultados:</h2>
-    <p>Sumados: {{ numero1 + numero2 }}</p>
-    <p>Restados: {{ numero1 - numero2 }}</p>   
-    <p>Multiplicados: {{ numero1 * numero2 }}</p>
-    <p>Divididos: {{ numero1 / numero2 }}</p>
-    <p>Potencia del primero sobre el segundo: {{ numero1 ** numero2 }}</p>
+    <br>
+    <label><input type="checkbox" v-model="minusculas">Minúsculas</label>
+    <label><input type="checkbox" v-model="minusculas">Mayúsculas</label>
+    <label><input type="checkbox" v-model="digitos">Dígitos</label>
+    <label><input type="checkbox" v-model="simbolos">Símbolos</label><br>
+    <button type="submit">Generar</button>
+    <p>letra: {{ minusculas.charAt(Math.floor(Math.random() * minusculas.length)) }}</p>
   `,
 };
+/*Navigator.clipboard.writeText("aqui ira la variable a copiar")*/
 // Crear la aplicación y montarla en el elemento con id="app"
 createApp(App).mount('#app');
