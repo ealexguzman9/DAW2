@@ -3,8 +3,14 @@ const { createApp } = Vue;
 const App = {
   data() {
     return {
-      minusculas:"abcdefghijklmnopqrstuvwxyz",
+      letra:"",
+      minusculas:"abcdefghijklmnopqrstuvwxyz"
     };
+  },
+  methods: {
+    generar_contraseña(){
+    this.letra = minusculas.charAt(Math.floor(Math.random() * minusculas.length))
+    }
   },
   template: `
     <input 
@@ -12,21 +18,15 @@ const App = {
     type="textbox"
     placeholder=""
     />
-
     <button type="submit">Copiar</button><br>
-    
-    <input
-    v-model="longitud"
-    type="number"
-    placeholder="1"
-    />
+    <input type="range" min="1" max="20" v-model="longitud">
+
     <br>
     <label><input type="checkbox" v-model="minusculas">Minúsculas</label>
     <label><input type="checkbox" v-model="minusculas">Mayúsculas</label>
     <label><input type="checkbox" v-model="digitos">Dígitos</label>
     <label><input type="checkbox" v-model="simbolos">Símbolos</label><br>
-    <button type="submit">Generar</button>
-    <p>letra: {{ minusculas.charAt(Math.floor(Math.random() * minusculas.length)) }}</p>
+    <button type="submit" @click="generar_contraseña">Generar</button>
   `,
 };
 /*Navigator.clipboard.writeText("aqui ira la variable a copiar")*/
