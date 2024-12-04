@@ -4,13 +4,13 @@ const App = {
   data() {
     return {
       caja: "",
-      longitud: 8,
+      longitud: 20,
       minusculas: "abcdefghijklmnopqrstuvwxyz", 
       mayusculas: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 
       digitos: "0123456789", 
-      simbolos: "!@#$%^&*()_-+=<>?/[]{}",
+      simbolos: "#$%&'()*+-./:;<=>?@[]^_`{|}",
       caracteresPermitidos: "", 
-      incluirMinusculas: false, 
+      incluirMinusculas: true, 
       incluirMayusculas: false, 
       incluirDigitos: false, 
       incluirSimbolos: false, 
@@ -19,30 +19,31 @@ const App = {
   methods: {
     generar_contraseña() {
       let caracteresDisponibles = "";
-      if (this.incluirMinusculas) caracteresDisponibles += this.minusculas;
-      if (this.incluirMayusculas) caracteresDisponibles += this.mayusculas;
-      if (this.incluirDigitos) caracteresDisponibles += this.digitos;
-      if (this.incluirSimbolos) caracteresDisponibles += this.simbolos;
+      if (this.incluirMinusculas)
+        caracteresDisponibles = caracteresDisponibles + this.minusculas;
+      if (this.incluirMayusculas)
+        caracteresDisponibles = caracteresDisponibles + this.mayusculas;
+      if (this.incluirDigitos)
+        caracteresDisponibles = caracteresDisponibles + this.digitos;
+      if (this.incluirSimbolos)
+        caracteresDisponibles = caracteresDisponibles + this.simbolos;
 
       if (caracteresDisponibles.length === 0) {
-        this.caja = "Por favor, selecciona al menos una opción";
+        alert("Por favor, selecciona al menos una opción");
         return;
       }
-      let password = "";
+      let contrasena = "";
       for (let i = 0; i < this.longitud; i++) {
         const randomChar = caracteresDisponibles.charAt(Math.floor(Math.random() * caracteresDisponibles.length));
-        password += randomChar;
+        contrasena = contrasena + randomChar;
       }
-      this.caja = password;
+      this.caja = contrasena;
     },
     copiarAlPortapapeles() {
       navigator.clipboard.writeText(this.caja)
         .then(() => {
           alert("Contraseña copiada al portapapeles");
         })
-        .catch(err => {
-          alert("Error al copiar la contraseña: " + err);
-        });
     }
   },
   template: `
@@ -50,21 +51,19 @@ const App = {
       <input 
         v-model="caja"
         type="text"
-        placeholder="Contraseña generada"
+        placeholder=""
         readonly
       />
       <button type="button" @click="copiarAlPortapapeles">Copiar</button><br>
-      
+
       <label>Longitud: {{ longitud }}</label>
-      <input type="range" min="1" max="20" v-model="longitud" /><br>
+      <input type="range" min="20" max="255" v-model="longitud" /><br>
+      <label><input type="checkbox" v-model="incluirMinusculas">Minúsculas</label>
+      <label><input type="checkbox" v-model="incluirMayusculas">Mayúsculas</label>
+      <label><input type="checkbox" v-model="incluirDigitos">Dígitos</label>
+      <label><input type="checkbox" v-model="incluirSimbolos">Símbolos</label><br>
 
-      <!-- Checkboxes para elegir los tipos de caracteres -->
-      <label><input type="checkbox" v-model="incluirMinusculas"> Minúsculas</label>
-      <label><input type="checkbox" v-model="incluirMayusculas"> Mayúsculas</label>
-      <label><input type="checkbox" v-model="incluirDigitos"> Dígitos</label>
-      <label><input type="checkbox" v-model="incluirSimbolos"> Símbolos</label><br>
-
-      <button type="button" @click="generar_contraseña">Generar Contraseña</button>
+      <button type="button" @click="generar_contraseña">Generar</button>
     </div>
   `,
 };
