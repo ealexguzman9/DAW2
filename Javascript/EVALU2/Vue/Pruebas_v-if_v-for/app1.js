@@ -3,35 +3,28 @@ const { createApp } = Vue;
 const App = {
   data() {
     return {
-      servicios: [
-        {
-          nombre: 'Desarrollo web',
-          precio: 300,
-          activo:true
-        },{
-          nombre: 'Diseño base de datos',
-          precio: 400,
-          activo:false
-        },{
-          nombre: 'Integración',
-          precio: 250,
-          activo:false
-        },{
-          nombre: 'Formación',
-          precio: 220,
-          activo:true
-        }
-      ]
-
+      nombres:[
+        "John","Charlotte","Sarah","Alex","Bryan"
+      ],
+      valor:0
     };
   },
   methods: {
+    incrementar(){
+      this.valor++;
+    },
+    decrementar(){
+      this.valor--;
+    }
   },
   template: `
     <div>
-      <li v-for="servicio in servicios">
-      {{ servicio.nombre }}, Precio: {{ servicio.precio }}
-      </li>
+      <li v-for="nombre in nombres">
+        {{ nombre }}, {{ nombre.length }} caracteres y termina en {{ nombre.charAt(nombre.length-1).toUpperCase() }}</li>
+      <br>
+    <h1>{{valor}}</h1>
+    <button v-on:click="incrementar">Incrementar</button><button @click="decrementar">Decremetar</button>
+      
     </div>
   `,
 };
