@@ -40,14 +40,19 @@ const App = {
       this.caja = contrasena;
     },
     copiarAlPortapapeles() {
+      if(this.caja===""){
+        alert("Error, Debes generar una contraseña para copiar en el portapapeles.");
+      } else {
       navigator.clipboard.writeText(this.caja)
         .then(() => {
           alert("Contraseña copiada al portapapeles");
         })
+      }
     }
   },
   template: `
     <div>
+       <h1>Generador de contraseñas</h1>
       <input 
         v-model="caja"
         type="text"
@@ -55,8 +60,7 @@ const App = {
         readonly
       />
       <button type="button" @click="copiarAlPortapapeles">Copiar</button><br>
-
-      <label>Longitud: {{ longitud }}</label>
+      <br><label>Longitud: {{ longitud }}</label>
       <input type="range" min="20" max="255" v-model="longitud" /><br>
       <label><input type="checkbox" v-model="incluirMinusculas">Minúsculas</label>
       <label><input type="checkbox" v-model="incluirMayusculas">Mayúsculas</label>
