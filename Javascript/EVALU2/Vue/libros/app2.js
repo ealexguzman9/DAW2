@@ -31,35 +31,47 @@ const App = {
     };
   },
   methods: {
-    mostrar_todos(){
-      this.mostrar = !this.mostrar
+    mostrar_todos() {
+      this.mostrar = !this.mostrar;
+      this.mayores75 = false; // Asegura que solo una lista esté visible
     },
-    mostrar_mayores75(){
-      
+    mostrar_mayores75() {
+      this.mayores75 = !this.mayores75;
+      this.mostrar = false; // Asegura que solo una lista esté visible
     }
   },
-  template: `
-  
-  <div>
-  <table v-if="mostrar">
+  template: `  
+ <div>
+      <!-- Lista completa -->
+      <div v-if="mostrar">
+        <h3>Todos los libros</h3>
+        <ol>
+          <li v-for="libro in libros" :key="libro.titulo">
+            <strong>Título:</strong> {{ libro.titulo }}<br>
+            <strong>Autor:</strong> {{ libro.autor }}<br>
+            <strong>Año:</strong> {{ libro.anno }}<br>
+            <strong>Editorial:</strong> {{ libro.editorial }}<br><br>
+          </li>
+        </ol>
+      </div>
 
-    <tr>
-      <th><td>Título</td></th>
-      <th><td>Autor</td></th>
-      <th><td>Año</td></th>
-      <th><td>Editorial</td></th>
-    </tr>
-    <tr v-for="i in libros">
-      <td>{{i.titulo}}</td>
-      <td>{{i.autor}}</td>
-      <td>{{i.anno}}</td>
-      <td>{{i.editorial}}</td>
-    </tr>
-  </table>
-    <button v-on:click="mostrar_todos">Mostrar todos los libros</button>
-    <button @click="mostrar_mayores75">Mostrar mayores 75 años</button>
-      
-  </div>
+      <!-- Libros mayores de 75 años -->
+      <div v-if="mayores75">
+        <h3>Libros con más de 75 años de antigüedad</h3>
+        <ol>
+          <li v-for="libro in libros" :key="libro.titulo" v-if="anno_actual - libro.anno > 75">
+            <strong>Título:</strong> {{ libro.titulo }}<br>
+            <strong>Autor:</strong> {{ libro.autor }}<br>
+            <strong>Año:</strong> {{ libro.anno }}<br>
+            <strong>Editorial:</strong> {{ libro.editorial }}<br><br>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Botones -->
+      <button @click="mostrar_todos">Mostrar todos los libros</button>
+      <button @click="mostrar_mayores75">Mostrar mayores 75 años</button>
+    </div>
   `,
 };
 
