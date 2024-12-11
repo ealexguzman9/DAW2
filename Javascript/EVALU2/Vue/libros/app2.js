@@ -26,39 +26,112 @@ const App = {
         { titulo: "El extranjero", autor: "Albert Camus", anno: 1942, editorial: "Gallimard" }
       ],
       anno_actual: new Date().getFullYear(),
-      mostrar:false,
-      mayores75:false
+      mostrar_libros:0,
+      paginacion:1,
+      tabla_pag :[{ titulo: "Cien años de soledad", autor: "Gabriel García Márquez", anno: 1967, editorial: "Editorial Sudamericana" },
+        { titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes", anno: 1605, editorial: "Francisco de Robles" },
+        { titulo: "1984", autor: "George Orwell", anno: 1949, editorial: "Secker & Warburg" },
+        { titulo: "Matar a un ruiseñor", autor: "Harper Lee", anno: 1960, editorial: "J.B. Lippincott & Co." },
+        { titulo: "El gran Gatsby", autor: "F. Scott Fitzgerald", anno: 1925, editorial: "Charles Scribner's Sons" },
+        ]
     };
   },
   methods: {
     mostrar_todos(){
-      this.mostrar = !this.mostrar
+      if(this.mostrar_libros==0){
+        this.mostrar_libros++;
+      }else if(this.mostrar_libros==2){
+        this.mostrar_libros--;
+      }
     },
     mostrar_mayores75(){
-      
+      if(this.mostrar_libros==1){
+        this.mostrar_libros++;
+      }else if(this.mostrar_libros==0){
+        this.mostrar_libros=2;
+      }
+    },
+    ocultar(){
+      this.mostrar_libros=0;
+    },
+    siguiente(){
+      this.paginacion++;
+      if(this.paginacion>4){
+        this.paginacion=1;
+      }
+      this.tabla_pag=[];
+      if(this.paginacion==1){
+        for(let i=0;i<5;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==2){
+        for(let i=5;i<10;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==3){
+        for(let i=10;i<15;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==4){
+        for(let i=15;i<20;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+    },
+    anterior(){
+      this.paginacion--;
+      if(this.paginacion<1){
+        this.paginacion=4;
+      }
+      this.tabla_pag=[];
+      if(this.paginacion==1){
+        for(let i=0;i<5;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==2){
+        for(let i=5;i<10;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==3){
+        for(let i=10;i<15;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
+      if(this.paginacion==4){
+        for(let i=15;i<20;i++){
+          this.tabla_pag.push(this.libros[i]);
+        }
+      }
     }
   },
   template: `
-  
   <div>
-  <table v-if="mostrar">
+    <h1>Libros</h1>
+    <div v-if="mostrar_libros==1">
+      <div v-for="libro in libros">
+        {{ libro }}}
+      </div>
+    </div>
+    <div v-if="mostrar_libros==2">
+      <div v-for="libro in libros">
+        <p>{{ anno_actual-libro.anno>75?libro:""}}</p>
+      </div>
+    </div>
+    <button v-on:click="mostrar_todos()">Mostrar todos los libros</button>
+    <button @click="mostrar_mayores75()">Mostrar mayores 75 años</button>
+    <button @click="ocultar()">Ocultar</button>
 
-    <tr>
-      <th><td>Título</td></th>
-      <th><td>Autor</td></th>
-      <th><td>Año</td></th>
-      <th><td>Editorial</td></th>
-    </tr>
-    <tr v-for="i in libros">
-      <td>{{i.titulo}}</td>
-      <td>{{i.autor}}</td>
-      <td>{{i.anno}}</td>
-      <td>{{i.editorial}}</td>
-    </tr>
-  </table>
-    <button v-on:click="mostrar_todos">Mostrar todos los libros</button>
-    <button @click="mostrar_mayores75">Mostrar mayores 75 años</button>
-      
+    <h1>Paginación</h1>
+    <div>{{tabla_pag}}</div>
+    <button v-on:click="anterior()">anterior</button>
+    <div>{{paginacion}}</div>
+    <button v-on:click="siguiente()">siguiente</button>
+
   </div>
   `,
 };

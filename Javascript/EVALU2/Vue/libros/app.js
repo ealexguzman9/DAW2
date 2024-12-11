@@ -64,16 +64,12 @@ const App = {
       </tr>
     </table>
 
-
     <div v-for="i in libros">
       <h2>{{i.titulo}}</h2> 
       <th>{{i.autor}}</th>
       <p>{{i.anno}}</p>
       <p>{{i.editorial}}</p>
     </div>
-    
-
-
   </div>
   `,
 };
