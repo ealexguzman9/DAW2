@@ -37,6 +37,9 @@ const App = {
     };
   },
   methods: {
+    mostrar_todos() {
+      this.mostrar = !this.mostrar;
+      this.mayores75 = false; // Asegura que solo una lista esté visible
     mostrar_todos(){
       if(this.mostrar_libros==0){
         this.mostrar_libros++;
