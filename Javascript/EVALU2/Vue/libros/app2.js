@@ -37,9 +37,6 @@ const App = {
     };
   },
   methods: {
-    mostrar_todos() {
-      this.mostrar = !this.mostrar;
-      this.mayores75 = false; // Asegura que solo una lista esté visible
     mostrar_todos(){
       if(this.mostrar_libros==0){
         this.mostrar_libros++;
@@ -130,9 +127,9 @@ const App = {
     <button @click="ocultar()">Ocultar</button>
 
     <h1>Paginación</h1>
-    <div>{{tabla_pag}}</div>
+    <div>{{tabla_pag}}</div><br>
     <button v-on:click="anterior()">anterior</button>
-    <div>{{paginacion}}</div>
+    <label>{{paginacion}}</label>
     <button v-on:click="siguiente()">siguiente</button>
 
   </div>
