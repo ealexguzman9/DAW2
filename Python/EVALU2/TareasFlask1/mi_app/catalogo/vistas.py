@@ -26,7 +26,6 @@ def products():
             'name': product.name,
             'price': str(product.price),
             'category': product.category.name
-            # product.category devuelve un objeto de clase Category.
         }
     return jsonify(res)
 @catalog.route('/categories')
@@ -44,9 +43,8 @@ def create_product():
     
     name = request.args.get('name')
     price = request.args.get('price')
-    #price = request.form.get('price') #form -> Postman: en la pestaña Body, selecciona x-www-form-urlencoded    
     categName = request.args.get('category')
-    category = Category.query.filter_by(name=categName).first() #first devuelve un objeto, no una lista de un solo objeto.
+    category = Category.query.filter_by(name=categName).first()
     if not category:
         category = Category(categName)
     product = Product(name,price,category)
