@@ -55,6 +55,9 @@ createApp({
         { id: 28, ciudad: "Lisboa", habitantes: 545245, pais: "Portugal", continente: "Europa", imagen: "img/lisboa.webp" },
         { id: 29, ciudad: "Rio de Janeiro", habitantes: 6747815, pais: "Brasil", continente: "América", imagen: "img/rio_de_janeiro.webp" },
         { id: 30, ciudad: "Singapur", habitantes: 5638700, pais: "Singapur", continente: "Asia", imagen: "img/singapur.webp" },
+        { id: 31, ciudad: "Tegucigalpa", habitantes: 5638700, pais: "Honduras", continente: "America", imagen: "img/tegucigalpa.webp" },
+        { id: 32, ciudad: "Donostia", habitantes: 5638700, pais: "España", continente: "Europa", imagen: "img/donostia.webp" },
+
       ],
       currentPage: 1,
       itemsPerPage: 10,
