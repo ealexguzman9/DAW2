@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comidas del Mundo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Lista de comidas</h1>
+    <ul>
+      <li v-for="comida in paginatedfoods" :key="comida.id">
+        <img :src="comida.imagen" :alt="comida.comida" width="100" height="100" />
+        <div>
+          <strong>{{ comida.comida }}</strong> ({{ comida.origenes.toLocaleString() }} Origenes)
+          <br>
+          {{ comida.pais }}, {{ comida.continente }}
+        </div>
+      </li>
+    </ul>
+
+    <div class="pagination">
+      <button @click="prevPage" :disabled="currentPage === 1">Anterior</button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">Siguiente</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
