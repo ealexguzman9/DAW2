@@ -13,7 +13,7 @@
       <li v-for="comida in paginatedfoods" :key="comida.id">
         <img :src="comida.imagen" :alt="comida.comida" width="100" height="100" />
         <div>
-          <strong>{{ comida.comida }}</strong> ({{ comida.origenes.toLocaleString() }} Origenes)
+          <strong>{{ comida.comida }}</strong> ( Origenes: {{ comida.origenes.toLocaleString() }})
           <br>
           {{ comida.pais }}, {{ comida.continente }}
         </div>
