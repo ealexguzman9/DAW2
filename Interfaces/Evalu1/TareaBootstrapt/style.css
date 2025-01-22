@@ -87,3 +87,27 @@ footer {
 .navbar-brand img {
     filter: none;
 }
+.card:hover img{
+    animation: 2s mover linear 1;
+    animation-delay: 1s;
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+    }
+    @keyframes mover {
+        0% {
+            transform: translateX(200px);
+            rotate: -30deg;
+            opacity: 0;
+            filter: drop-shadow(0 0 10px red);
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+            rotate: 0deg;
+            filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+        }
+    }
+@media(max-width: 768px) {
+    .card:hover img{
+        animation: none;
+        }
+}

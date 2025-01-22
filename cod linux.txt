@@ -1,0 +1,133 @@
+apt install nmap -  ver los puertos abiertos
+
+create user 'wordpress'@'localhost' identified by 'aqui va la contraseña';
+grant all on wordpress.* to 'wordpress'@'localhost';-dar permisos totales al usuario
+
+ssh "Usuario de conexion"@"IP a conectar"
+apt cache search php|more
+archivos tgz = tar xvf
+/var/www/html/ 
+systemctl 'accion a desarrollar' 'el servidor o servicio'
+ufw 'accion a desarrollar'-->"allow,status,deny,disable,enable"
+
+unzip archivo.zip
+zip archivo.zip 'que quiero comprimir'
+
+mkdir archivo imagenes
+mkdir informes 
+cal >mes-actual
+cal >2024>2024
+cal >ayuda-wc>ayuda-wc
+
+
+wget https://uranga.eus/sistemas/eiffel-tower.jpg
+wget https://uranga.eus/sistemas/Ejemplo-desglose-en-Factura.xls
+wget https://uranga.eus/sistemas/EjemploDeFactura.doc
+wget https://uranga.eus/sistemas/cst_2021.pdf
+
+cp *.pdf /home/ealexguzman9/imagenes/
+mv /home/ealexguzman9/archivo/facturas/ E* /home/ealexguzman9/archivo
+mv /home/ealexguzman9/archivo/informes/ayuda-wc  /home/ealexguzman9/archivo/informes/ayuda-comandos
+man ps >> /home/ealexguzman9/archivo/informes/ayuda-wc
+
+wget https://uranga.eus/sistemas/sistemas/documentacion.zip
+unzip documentacion.zip.
+
+mv 4* /home/ealexguzman9/archivo/informes/
+
+rm /home/ealexguzman9/archivo/documentacion/2024/6*
+
+mv Funciones* /home/ealexguzman9/archivo/documentacion/2025/funciones2.xlsx
+
+(Estando en la carpeta 2025) --> cp *.xls /home/ealexguzman9/archivo/informes/
+
+wc el_quijote.txt
+
+head -n 20 Documentacion/el_quijote.txt > extracto.txt
+
+grep Toboso el_quijote.txt
+grep -c Toboso /home/ealexguzman9/archivo/Documentacion/el_quijote.txt
+tree -a -L 3 /home/ealexguzman9 > arbol.txt
+
+grep 'usuario' (passwd Informacion de el usuario)
+useradd 'nombre' (añade usuario)
+adduser 'nombre' (añade usuario con contraseña)
+passwd 'usuario' (Actualizar contraseña)
+passwd (cambiar contraseña root)
+groupadd 'nombre del grupo' (crear grupo)
+more /etc/group (visualizar informacion del sistema(historial))
+useradd -G Ventas,informatica ed(crea ususario y lo mete directamente al grupo)
+usermod -aG 'nombre del grupo' 'nombre usuario'
+
+chmod -'que permiso desea quitar"w,r o x"' 'nombre del archivo'
+chmod -'que permiso desea quitar"w,r o x"' 'nombre del archivo'
+r = lectura(read)
+w = escritura(write)
+x = ejecucion(execute)
+chmod 'usuario(u,g)'+w 'nombre del archivo'
+chmod 'numero decimal' 'nombre del archivo'
+
+4=lectura
+3=escritura
+1=ejecucion
+
+drwx|rwx|rwx
+d=directorio  - = nada
+drwx|rwx|rwx
+usuario|grupo|otros
+
+bin 'nombre del archivo'(es para editar archivos txt)
+
+chown 'nombre del usuario' 'nombre del archivo'(sirve para cambiar de dueño el archivo)
+chown 'nombre del usuario'.'nombre del grupo' 'nombre del archivo'(sirve para cambiar de dueño el archivo y el grupo tambien)
+
+grep hola archivo.txt
+wc archivo.txt
+
+ps 'Mostrar funcionamientos del sistema online'
+ps -a
+ps -A
+ps -aux
+ps -aux|grep cron
+sleep 10
+se pueden ejecutar mas de 1 comando pero no a la vez 
+primero ejecuta el primer comando escrito y despues ejecuta
+el siguiente escrito y asi sucesivamente
+'comando' ; 'comando' ....
+
+control +c *anular
+control +z *detener comando
+
+
+jobs *procesos activos ejecutandose
+
+&* se utiliza para ejecutar los comandos en segundo plano
+
+fg% 'numero del proceso' es para poner en primer plano el comando
+deseado
+
+bg %'numero del proceso' es para poner en segundo plano el proceso
+deseado
+
+top *es para monitorear el sistema
+
+at'hora que se desea ejecutar/formato24H' *sirve para programar tareas
+at> 'comando que desea ejecutar a la hora acordada'
+(se puede poner mas de 1 comando)
+
+sudo apt update'actualizar todo'
+
+more /etc/crontab -- informacion de sistema
+crontab -l  --Mostrar cron
+crontab -e  --Editar cron
+crontab -r  --Eliminar cron
+
+
+sudo apt install curl
+
+nano prueba.sh
+echo "Hola mundo"
+
+cat prueba.sh
+/home/ubuntu/prueba.sh
+/
