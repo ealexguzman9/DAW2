@@ -1,0 +1,4 @@
+v0.dev
+deepseek.com
+lovable.dev
+zipwp.com
